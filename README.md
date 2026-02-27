@@ -15,7 +15,7 @@ GTM での計測実装やデバッグ作業を、できるだけ「コピペだ�
 
 ### 1. リポジトリをダウンロード
 ```
-git clone https://github.com/your-name/your-repo.git
+git clone https://github.com/AzuWatsan/Selector-Code-Generator.git
 ```
 ```
 cd your-repo
