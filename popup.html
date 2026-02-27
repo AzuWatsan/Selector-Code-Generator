@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Selector Code Generator</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        min-width: 260px;
+        margin: 0;
+        padding: 12px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        background: #f5f5f7;
+        color: #1f1f1f;
+      }
+
+      .card {
+        background: #ffffff;
+        border-radius: 10px;
+        padding: 12px 14px;
+        box-shadow: 0 6px 18px rgba(15, 23, 42, 0.12);
+      }
+
+      .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 8px;
+      }
+
+      .title-group {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .logo {
+        width: 24px;
+        height: 24px;
+        border-radius: 999px;
+        background: linear-gradient(135deg, #4285f4, #34a853);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 11px;
+        font-weight: 600;
+        color: #fff;
+      }
+
+      h1 {
+        font-size: 14px;
+        font-weight: 600;
+        margin: 0;
+      }
+
+      .badge {
+        font-size: 10px;
+        padding: 2px 6px;
+        border-radius: 999px;
+        background: #e5efff;
+        color: #1a4fd8;
+        font-weight: 500;
+      }
+
+      .description {
+        font-size: 12px;
+        margin: 4px 0 10px;
+        color: #4b5563;
+        line-height: 1.5;
+      }
+
+      .steps {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 10px;
+        font-size: 11px;
+        color: #6b7280;
+      }
+
+      .steps li {
+        display: flex;
+        gap: 4px;
+        align-items: flex-start;
+        margin-bottom: 2px;
+      }
+
+      .steps span {
+        color: #9ca3af;
+      }
+
+      .output-section {
+        border-radius: 8px;
+        background: #f3f4f6;
+        padding: 6px 8px;
+        margin-bottom: 10px;
+        font-size: 11px;
+        color: #4b5563;
+      }
+
+      .output-title {
+        font-weight: 600;
+        margin-bottom: 2px;
+        font-size: 11px;
+      }
+
+      .output-list {
+        margin: 0;
+        padding-left: 14px;
+      }
+
+      .primary-button {
+        width: 100%;
+        padding: 8px 12px;
+        font-size: 13px;
+        border-radius: 6px;
+        border: none;
+        background: linear-gradient(135deg, #4285f4, #3367d6);
+        color: #fff;
+        cursor: pointer;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+      }
+
+      .primary-button:hover {
+        background: linear-gradient(135deg, #3973ff, #2751c7);
+      }
+
+      .primary-button:disabled {
+        opacity: 0.6;
+        cursor: default;
+      }
+
+      .primary-button-icon {
+        font-size: 14px;
+      }
+
+      .footer {
+        margin-top: 6px;
+        font-size: 10px;
+        color: #9ca3af;
+        display: flex;
+        justify-content: space-between;
+        gap: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <header class="header">
+        <div class="title-group">
+          <div class="logo">SCG</div>
+          <h1>Selector Code Generator</h1>
+        </div>
+        <span class="badge">GTM / Console</span>
+      </header>
+
+      <p class="description">
+        ページ上の要素をクリックして、GTM用の変数コードとコンソール実行コードを一度に生成します。
+      </p>
+
+      <ul class="steps">
+        <li><span>1.</span><div>下のボタンを押して選択モードを開始</div></li>
+        <li><span>2.</span><div>取得したい品番・価格などの要素をクリック</div></li>
+        <li><span>3.</span><div>コードがクリップボードにコピーされます</div></li>
+      </ul>
+
+      <div class="output-section">
+        <div class="output-title">出力されるコード</div>
+        <ul class="output-list">
+          <li>GTM カスタム JavaScript 変数用関数</li>
+          <li>コンソールで即実行できる確認用コード</li>
+        </ul>
+      </div>
+
+      <button id="start-select" class="primary-button" type="button">
+        <span class="primary-button-icon">▶</span>
+        <span>選択モードを開始</span>
+      </button>
+
+      <div class="footer">
+        <span>ハイライトされた要素をクリックしてください。</span>
+      </div>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
